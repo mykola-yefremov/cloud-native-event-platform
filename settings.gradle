@@ -1,1 +1,6 @@
 rootProject.name = "cloud-native-event-platform"
+
+include("services:auth-service")
+include("services:event-ingest-service")
+include("services:event-processing-service")
+include("services:notification-service")

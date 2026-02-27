@@ -2,13 +2,33 @@ plugins {
     id 'base'
 }
 
+group = 'com.qoq'
+version = '0.0.1-SNAPSHOT'
+
 allprojects {
-    group = 'com.example'
-    version = '0.1.0-SNAPSHOT'
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    tasks.withType(Test).configureEach {
+        useJUnitPlatform()
+    }
 }
 
 tasks.register('checkProject') {
+    group = 'verification'
+    description = 'Validates root multi-module baseline.'
     doLast {
-        println 'Baseline build is configured.'
+        println 'Root multi-module baseline is configured.'
     }
 }
