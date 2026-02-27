@@ -66,3 +66,27 @@ Clients → API Gateway → Services → Kafka → Consumers → External Webhoo
 - [ ] Kafka processing
 - [ ] Kubernetes deployment
 - [ ] Observability
+
+## Development Flow
+
+We use a `main` + `develop` branching model.
+
+- `main` is release-only and must always stay stable.
+- `develop` is the integration branch for completed feature work.
+- `feature/*` branches are used for isolated implementation and merged into `develop` via Pull Request.
+
+### Merge Rules
+
+- No direct pushes to `main`.
+- No direct pushes to `develop`.
+- Every change must go through Pull Request review.
+- Prefer squash merge for clean history.
+- Use Conventional Commits for commit messages (`feat:`, `fix:`, `docs:`, `chore:`, `test:`, `ci:`).
+
+## Project Structure
+
+- `.github/` - GitHub workflows, PR templates, and repository automation.
+- `docs/` - architecture notes, roadmap, and operational documentation.
+- `infra/` - infrastructure manifests and deployment assets (Docker, Kubernetes, Helm).
+- `services/` - backend services (Auth, Event Ingest, Event Processing, Notification).
+
