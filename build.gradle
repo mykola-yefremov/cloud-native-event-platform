@@ -1,0 +1,14 @@
+plugins {
+    id 'base'
+}
+
+allprojects {
+    group = 'com.example'
+    version = '0.1.0-SNAPSHOT'
+}
+
+tasks.register('checkProject') {
+    doLast {
+        println 'Baseline build is configured.'
+    }
+}
