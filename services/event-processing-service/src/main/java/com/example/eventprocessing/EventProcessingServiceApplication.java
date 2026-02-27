@@ -1,0 +1,11 @@
+package com.example.eventprocessing;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class EventProcessingServiceApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(EventProcessingServiceApplication.class, args);
+  }
+}
